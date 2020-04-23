@@ -7,24 +7,22 @@
 
 #include "coutFunctions.h"
 #include <cmath>
+#include <vector>
 
 void y_kx(int N)
 {
-    double x[N];
-    double y[N];
+    double sumXY = 0, sumXX = 0, sumYY = 0;
     std::cout << "Вводите ваши координаты через пробел следующим образом:\n"
               << "x y  <-----Сначала х, потом через пробел y. Потом через Enter или пробел следующие координаты.\n";
     for (int i = 1; i <= N; ++i)
     {
-        std::cin >> x[i] >> y[i];
+        double x, y;
+        std::cin >> x >> y;
+        sumXY += x * y;
+        sumXX += pow(x, 2);
+        sumYY += y * y;
     }
-    double sumXY = 0, sumXX = 0, sumYY = 0;
-    for (int i = 1; i <= N; i++)
-    {
-        sumXY += x[i] * y[i];
-        sumXX += pow(x[i], 2);
-        sumYY += y[i] * y[i];
-    }
+
     double srznachXY = sumXY / N;
     double srznachXX = sumXX / N;
     double srznachYY = sumYY / N;
@@ -50,27 +48,23 @@ void y_kx(int N)
         std::cout << "Итоговое уравнение прямой: y = " << K << "x" << std::endl;
     }
     std::cout << "------------------------------------------------------------------" << std::endl
-              << "Если хотите закрыть программу, введите 0, если нет, то введите 1: ";
+              << "Если хотите закрыть программу, введите 0, если нет, то введите 1: \n";
 }
 
 void y_ax_b(int N)
 {
-    double x[N];
-    double y[N];
+    double sumXY = 0, sumXX = 0, sumYY = 0, sumX = 0, sumY = 0;
     std::cout << "Вводите ваши координаты через пробел следующим образом:\n"
               << "x y  <-----Сначала х, потом через пробел y. Потом через Enter или пробел следующие координаты.\n";
     for (int i = 1; i <= N; ++i)
     {
-        std::cin >> x[i] >> y[i];
-    }
-    double sumXY = 0, sumXX = 0, sumYY = 0, sumX = 0, sumY = 0;
-    for (int i = 1; i <= N; i++)
-    {
-        sumXY += x[i] * y[i];
-        sumXX += pow(x[i], 2);
-        sumYY += y[i] * y[i];
-        sumX += x[i];
-        sumY += y[i];
+        double x, y;
+        std::cin >> x >> y;
+        sumXY += x * y;
+        sumXX += pow(x, 2);
+        sumYY += y * y;
+        sumX += x;
+        sumY += y;
     }
     double srznachXY = sumXY / N;
     double srznachXX = sumXX / N;
