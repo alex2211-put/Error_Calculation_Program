@@ -9,7 +9,7 @@ bool isWork = true;
 
 void MNK(){
     std::cout << "Выберите, какая прямая должна получиться и введите выбранную цифру:\n"
-              << "1) y = ax + b\n"
+              << "1) y = bx + a\n"
               << "2) y = kx\n";
     int answer1 = cinFromPeople();
     int N;
