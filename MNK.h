@@ -20,7 +20,7 @@ void MNK(){
     {
         case 1:
         {
-            y_ax_b(N);
+            y_bx_a(N);
             std::cin >> isWork;
             break;
         }

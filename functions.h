@@ -51,7 +51,7 @@ void y_kx(int N)
               << "Если хотите закрыть программу, введите 0, если нет, то введите 1: \n";
 }
 
-void y_ax_b(int N)
+void y_bx_a(int N)
 {
     double sumXY = 0, sumXX = 0, sumYY = 0, sumX = 0, sumY = 0;
     std::cout << "Вводите ваши координаты через пробел следующим образом:\n"
@@ -76,7 +76,7 @@ void y_ax_b(int N)
     double oB = srznachXX - pow(srznachX, 2) == 0 ? 0 :
                 (sqrt((srznachYY - pow(srznachY, 2)) / (srznachXX - pow(srznachX, 2)) - b * b) / sqrt(N));
     double oA = oB * sqrt(srznachXX - pow(srznachX, 2));
-    double proxOB = oB * 100 / b;
+    double proxOB = std::abs(oB) * 100 / std::abs(b);
     double proxOA = a != 0 ? oA * 100 / std::abs(a) : 0;
     std::cout << "Итоговые значения искомых коэффициентов:\n"
               << "Коэффициент b = " << b << "." << std::endl
